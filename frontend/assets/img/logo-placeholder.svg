@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- Logo placeholder for Haiti Reh-Care -->
+  <rect x="5" y="10" width="40" height="40" rx="8" fill="#1565C0"/>
+  <path d="M15 30 L25 20 L35 30 L25 40 Z" fill="white"/>
+  <circle cx="25" cy="30" r="5" fill="#2E7D32"/>
+  
+  <text x="55" y="38" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1565C0">
+    Haiti Reh-Care
+  </text>
+  <text x="55" y="50" font-family="Arial, sans-serif" font-size="10" fill="#475569">
+    Centre de Réhabilitation
+  </text>
+</svg>

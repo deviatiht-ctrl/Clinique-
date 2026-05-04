@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Haiti Reh-Care</title>
+  <meta name="description" content="Articles médicaux et informations sur l'orthopédie, les prothèses et la rééducation.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/sections.css">
+  <link rel="stylesheet" href="../assets/css/cards.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      <div class="navbar-nav">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="equipe.html" class="nav-link">Notre Équipe</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="galerie.html" class="nav-link">Galerie</a>
+        <a href="don.html" class="nav-link">Don</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="login.html" class="nav-admin" id="adminLink">Admin</a>
+        <a href="rendez-vous.html" class="btn btn-primary btn-pill"><i data-lucide="calendar-check"></i> Prendre RDV</a>
+        <a href="login.html" class="btn btn-outline btn-sm" id="loginBtn"><i data-lucide="user"></i></a>
+        <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="navbar-logo"><img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+      <button class="mobile-toggle" id="mobileClose"><i data-lucide="x"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="equipe.html" class="nav-link">Notre Équipe</a>
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="don.html" class="nav-link">Don</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="mobile-actions"><a href="rendez-vous.html" class="btn btn-primary btn-pill">Prendre RDV</a></div>
+  </div>
+
+  <main class="page-content">
+    <section style="padding: var(--space-12) 0 var(--space-6); background-color: var(--clr-bg-blue);">
+      <div class="container">
+        <div class="eyebrow">
+          <i data-lucide="newspaper" style="width: 14px; height: 14px;"></i> Articles médicaux
+        </div>
+        <h1 style="font-size: var(--fs-h2); font-family: var(--font-display); margin-bottom: var(--space-3);">Notre Blog</h1>
+        <p style="font-size: 18px; color: var(--clr-text-secondary); max-width: 600px;">
+          Informations et conseils de nos spécialistes en orthopédie et rééducation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Categories -->
+        <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-6); flex-wrap: wrap;">
+          <button class="btn btn-primary btn-sm pill-btn active" data-category="all">Tous</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="pathologies">Pathologies</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="protheses">Prothèses</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="ortheses">Orthèses</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="reeducation">Rééducation</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="actualites">Actualités</button>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);">
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="Genou" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Pathologies</span>
+              <h3>Différents types de pathologies fréquentes du genou</h3>
+              <p>Découvrez les principales affections du genou, leurs symptômes et les traitements orthopédiques disponibles...</p>
+              <div class="blog-card-meta">
+                <span>15 mars 2024</span>
+                <span>5 min de lecture</span>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Scoliose" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Orthèses</span>
+              <h3>Prise en charge scoliose/cyphose/lordose</h3>
+              <p>Les corsets orthopédiques et leur rôle dans le traitement des déformations de la colonne vertébrale...</p>
+              <div class="blog-card-meta">
+                <span>10 mars 2024</span>
+                <span>4 min de lecture</span>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop" alt="Rééducation" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Rééducation</span>
+              <h3>L'importance de la rééducation post-amputation</h3>
+              <p>Pourquoi la kinésithérapie est essentielle après une amputation pour une adaptation réussie...</p>
+              <div class="blog-card-meta">
+                <span>5 mars 2024</span>
+                <span>6 min de lecture</span>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=400&fit=crop" alt="Prothèse" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Prothèses</span>
+              <h3>Choisir sa prothèse : le guide complet</h3>
+              <p>Les critères à considérer pour choisir la prothèse la plus adaptée à vos besoins...</p>
+              <div class="blog-card-meta">
+                <span>28 février 2024</span>
+                <span>8 min de lecture</span>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop" alt="Orthèse" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Orthèses</span>
+              <h3>Orthèse de genou : types et indications</h3>
+              <p>Quand et pourquoi utiliser une orthèse de genou ? Explications de nos spécialistes...</p>
+              <div class="blog-card-meta">
+                <span>20 février 2024</span>
+                <span>5 min de lecture</span>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?w=600&h=400&fit=crop" alt="Actualité" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Actualités</span>
+              <h3>Haiti Reh-Care célèbre 10 ans d'existence</h3>
+              <p>Retour sur une décennie d'accompagnement des patients haïtiens...</p>
+              <div class="blog-card-meta">
+                <span>18 avril 2025</span>
+                <span>3 min de lecture</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <div style="display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-8);">
+          <button class="btn btn-outline btn-sm" disabled><i data-lucide="chevron-left"></i></button>
+          <button class="btn btn-primary btn-sm">1</button>
+          <button class="btn btn-outline btn-sm">2</button>
+          <button class="btn btn-outline btn-sm">3</button>
+          <button class="btn btn-outline btn-sm"><i data-lucide="chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+          <p>Permettre aux patients de retrouver leur fonction de mobilité.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+            <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Liens rapides</h4>
+          <div class="footer-links">
+            <a href="../index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="equipe.html">Notre Équipe</a>
+            <a href="blog.html">Blog</a>
+            <a href="galerie.html">Galerie</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Patients</h4>
+          <div class="footer-links">
+            <a href="rendez-vous.html">Prendre RDV</a>
+            <a href="inscription-patient.html">Inscription</a>
+            <a href="suivi-patient.html">Suivi patient</a>
+            <a href="don.html">Faire un don</a>
+          </div>
+        </div>
+        <div class="footer-column footer-contact">
+          <h4>Contact</h4>
+          <p><i data-lucide="map-pin" style="width: 14px; height: 14px; display: inline;"></i> 22 Rue de la Paix, Delmas 75, Haïti</p>
+          <p><i data-lucide="phone" style="width: 14px; height: 14px; display: inline;"></i> +509 3644-1617</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Haiti Reh-Care 2025 | Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    // Blog category filter
+    const filterBtns = document.querySelectorAll('.pill-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('btn-primary', 'active');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
+        btn.classList.add('btn-primary', 'active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Rendez-vous | Haiti Reh-Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="../../index.html"><img src="../../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Tableau de bord</a>
+      <a href="rendez-vous.html" class="sidebar-link active"><i data-lucide="calendar"></i> Rendez-vous</a>
+      <a href="patients.html" class="sidebar-link"><i data-lucide="users"></i> Patients</a>
+      <a href="blog.html" class="sidebar-link"><i data-lucide="file-text"></i> Blog</a>
+      <a href="galerie.html" class="sidebar-link"><i data-lucide="image"></i> Galerie</a>
+      <a href="equipe.html" class="sidebar-link"><i data-lucide="user-cog"></i> Équipe</a>
+      <a href="parametres.html" class="sidebar-link"><i data-lucide="settings"></i> Paramètres</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" onclick="logout()" class="sidebar-link"><i data-lucide="log-out"></i> Déconnexion</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 class="admin-title">Gestion des Rendez-vous</h1>
+      <div class="admin-actions">
+        <a href="../rendez-vous.html" target="_blank" class="btn btn-primary btn-pill">Nouveau RDV</a>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Calendar View -->
+      <div class="info-card" style="margin-bottom: var(--space-6);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <button class="btn btn-outline btn-sm" id="prevMonth"><i data-lucide="chevron-left"></i></button>
+            <h3 id="currentMonth" style="margin: 0; min-width: 150px; text-align: center;">Janvier 2025</h3>
+            <button class="btn btn-outline btn-sm" id="nextMonth"><i data-lucide="chevron-right"></i></button>
+          </div>
+          <div class="filter-group">
+            <select class="form-select" style="width: auto;">
+              <option value="">Tous les statuts</option>
+              <option value="pending">En attente</option>
+              <option value="confirmed">Confirmé</option>
+              <option value="completed">Terminé</option>
+              <option value="cancelled">Annulé</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Calendar Grid -->
+        <div class="calendar-grid" id="calendarGrid">
+          <div class="calendar-day-header">Lun</div>
+          <div class="calendar-day-header">Mar</div>
+          <div class="calendar-day-header">Mer</div>
+          <div class="calendar-day-header">Jeu</div>
+          <div class="calendar-day-header">Ven</div>
+          <div class="calendar-day-header">Sam</div>
+          <div class="calendar-day-header">Dim</div>
+        </div>
+      </div>
+
+      <!-- Appointments List -->
+      <div class="info-card">
+        <h3 style="margin-bottom: var(--space-4);">Rendez-vous du jour</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Heure</th>
+              <th>Patient</th>
+              <th>Type</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="appointmentsTableBody">
+            <tr>
+              <td>09:00</td>
+              <td>Jean Baptiste<br><small>HRC-A1B2C3</small></td>
+              <td>Suivi</td>
+              <td><span class="pill pill-blue">Confirmé</span></td>
+              <td>
+                <button class="action-btn"><i data-lucide="check"></i></button>
+                <button class="action-btn"><i data-lucide="x"></i></button>
+                <button class="action-btn"><i data-lucide="message-circle"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>10:00</td>
+              <td>Marie Joseph<br><small>HRC-D4E5F6</small></td>
+              <td>Première consult.</td>
+              <td><span class="pill pill-green">Confirmé</span></td>
+              <td>
+                <button class="action-btn"><i data-lucide="check"></i></button>
+                <button class="action-btn"><i data-lucide="x"></i></button>
+                <button class="action-btn"><i data-lucide="message-circle"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/api.js"></script>
+  <script src="../../assets/js/auth.js"></script>
+  <script src="../../assets/js/admin/appointments.js"></script>
+  <script>
+    lucide.createIcons();
+    checkAdminAuth();
+    
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+  </script>
+</body>
+</html>

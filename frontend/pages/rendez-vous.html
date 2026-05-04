@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prendre Rendez-vous | Haiti Reh-Care</title>
+  <meta name="description" content="Prenez rendez-vous en ligne avec Haiti Reh-Care. Consultation orthopédique, suivi, urgence ou prise de mesures. Réponse sous 24h.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/forms.css">
+  <link rel="stylesheet" href="../assets/css/calendar.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      <div class="navbar-nav">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="equipe.html" class="nav-link">Notre Équipe</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="galerie.html" class="nav-link">Galerie</a>
+        <a href="don.html" class="nav-link">Don</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="rendez-vous.html" class="btn btn-primary btn-pill">
+          <i data-lucide="calendar-check"></i> Prendre RDV
+        </a>
+        <button class="mobile-toggle" id="mobileToggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-content" style="padding-top: var(--space-6);">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <!-- Page Header -->
+        <div class="section-header" style="text-align: center; margin-bottom: var(--space-6);">
+          <div class="eyebrow">
+            <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+            Réservation en ligne
+          </div>
+          <h1 style="font-size: var(--fs-h2); font-family: var(--font-display);">Prendre un Rendez-vous</h1>
+          <p>Réservez votre consultation en quelques clics. Notre équipe vous contactera sous 24 heures pour confirmer.</p>
+        </div>
+
+        <!-- Form Steps -->
+        <div class="form-steps">
+          <div class="steps-indicator">
+            <div class="step-dot active" data-step="1">1</div>
+            <div class="step-line" data-step="1"></div>
+            <div class="step-dot" data-step="2">2</div>
+            <div class="step-line" data-step="2"></div>
+            <div class="step-dot" data-step="3">3</div>
+            <div class="step-line" data-step="3"></div>
+            <div class="step-dot" data-step="4">4</div>
+          </div>
+        </div>
+
+        <!-- Appointment Form -->
+        <form id="appointmentForm" class="info-card" style="padding: var(--space-6);">
+          <!-- Step 1: Appointment Type -->
+          <div class="step-panel active" data-step="1">
+            <h3 style="font-size: var(--fs-body); margin-bottom: var(--space-4);">Type de consultation</h3>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3);">
+              <div class="appointment-type-card" data-type="first_consultation">
+                <i data-lucide="user-plus"></i>
+                <h4>Première consultation</h4>
+                <p>Pour les nouveaux patients</p>
+              </div>
+              <div class="appointment-type-card" data-type="follow_up">
+                <i data-lucide="calendar-clock"></i>
+                <h4>Suivi</h4>
+                <p>Contrôle ou ajustement</p>
+              </div>
+              <div class="appointment-type-card" data-type="emergency">
+                <i data-lucide="alert-circle"></i>
+                <h4>Urgence</h4>
+                <p>Réparation ou problème urgent</p>
+              </div>
+              <div class="appointment-type-card" data-type="measurement">
+                <i data-lucide="ruler"></i>
+                <h4>Prise de mesures</h4>
+                <p>Pour nouveau appareil</p>
+              </div>
+            </div>
+            <input type="hidden" id="appointmentType" name="appointment_type" required>
+            <p class="form-error" id="typeError" style="display: none;">
+              <i data-lucide="alert-circle"></i> Veuillez sélectionner un type de consultation
+            </p>
+          </div>
+
+          <!-- Step 2: Date & Time -->
+          <div class="step-panel" data-step="2">
+            <h3 style="font-size: var(--fs-body); margin-bottom: var(--space-4);">Choisir une date et heure</h3>
+            <div class="calendar-container">
+              <div class="calendar-header">
+                <h4 class="calendar-title" id="calendarMonth">Janvier 2025</h4>
+                <div class="calendar-nav">
+                  <button type="button" id="prevMonth"><i data-lucide="chevron-left"></i></button>
+                  <button type="button" id="nextMonth"><i data-lucide="chevron-right"></i></button>
+                </div>
+              </div>
+              <div class="calendar-grid" id="calendarGrid">
+                <!-- Calendar generated by JS -->
+              </div>
+              <div class="calendar-legend">
+                <div class="legend-item"><span class="legend-dot available"></span> Disponible</div>
+                <div class="legend-item"><span class="legend-dot selected"></span> Sélectionné</div>
+                <div class="legend-item"><span class="legend-dot booked"></span> Complet</div>
+              </div>
+            </div>
+            <input type="hidden" id="selectedDate" name="appointment_date" required>
+            
+            <div class="time-slots-container" id="timeSlotsContainer" style="display: none;">
+              <h4 class="time-slots-title">Heures disponibles</h4>
+              <div class="time-slots" id="timeSlots">
+                <!-- Time slots generated by JS -->
+              </div>
+            </div>
+            <input type="hidden" id="selectedTime" name="appointment_time" required>
+            <p class="form-error" id="dateTimeError" style="display: none;">
+              <i data-lucide="alert-circle"></i> Veuillez sélectionner une date et une heure
+            </p>
+          </div>
+
+          <!-- Step 3: Personal Information -->
+          <div class="step-panel" data-step="3">
+            <h3 style="font-size: var(--fs-body); margin-bottom: var(--space-4);">Informations personnelles</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nom complet <span class="required">*</span></label>
+                <input type="text" class="form-input" name="last_name" placeholder="Ex: Dupont" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Prénom <span class="required">*</span></label>
+                <input type="text" class="form-input" name="first_name" placeholder="Ex: Marie" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Date de naissance</label>
+                <input type="date" class="form-input" name="date_of_birth">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Sexe</label>
+                <div class="radio-group horizontal">
+                  <label class="radio-label">
+                    <input type="radio" name="sex" value="homme"> Homme
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="sex" value="femme"> Femme
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Téléphone <span class="required">*</span></label>
+                <input type="tel" class="form-input" name="phone" placeholder="Ex: +509 3644-1617" required>
+                <label class="toggle-label" style="margin-top: var(--space-2);">
+                  <input type="checkbox" name="is_whatsapp" checked>
+                  <span class="toggle-switch"></span>
+                  <span style="font-size: var(--fs-small);">Ce numéro est WhatsApp</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" name="email" placeholder="Ex: email@example.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Département</label>
+                <select class="form-select" name="department">
+                  <option value="">Sélectionner</option>
+                  <option value="Ouest">Ouest</option>
+                  <option value="Sud">Sud</option>
+                  <option value="Nord">Nord</option>
+                  <option value="Artibonite">Artibonite</option>
+                  <option value="Centre">Centre</option>
+                  <option value="Nord-Est">Nord-Est</option>
+                  <option value="Nord-Ouest">Nord-Ouest</option>
+                  <option value="Sud-Est">Sud-Est</option>
+                  <option value="Grand'Anse">Grand'Anse</option>
+                  <option value="Nippes">Nippes</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Commune</label>
+                <input type="text" class="form-input" name="commune" placeholder="Ex: Delmas">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Type de condition</label>
+              <select class="form-select" name="condition">
+                <option value="">Sélectionner</option>
+                <option value="amputation">Amputation</option>
+                <option value="paralysis">Paralysie</option>
+                <option value="scoliosis">Scoliose</option>
+                <option value="kyphosis">Cyphose</option>
+                <option value="knee_pathology">Pathologie du genou</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message (optionnel)</label>
+              <textarea class="form-textarea" name="message" placeholder="Décrivez brièvement votre besoin..."></textarea>
+            </div>
+            <div class="consent-box">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">J'accepte que mes données personnelles soient traitées par Haiti Reh-Care dans le cadre de ma demande de rendez-vous médical. <a href="#">En savoir plus</a></label>
+            </div>
+          </div>
+
+          <!-- Step 4: Confirmation -->
+          <div class="step-panel" data-step="4">
+            <h3 style="font-size: var(--fs-body); margin-bottom: var(--space-4);">Récapitulatif</h3>
+            <div class="info-card" style="background-color: var(--clr-bg-soft);">
+              <div style="display: grid; gap: var(--space-3);">
+                <div style="display: flex; justify-content: space-between; padding-bottom: var(--space-2); border-bottom: 1px solid var(--clr-border);">
+                  <span style="color: var(--clr-text-muted);">Type</span>
+                  <span style="font-weight: var(--fw-medium);" id="summaryType">-</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding-bottom: var(--space-2); border-bottom: 1px solid var(--clr-border);">
+                  <span style="color: var(--clr-text-muted);">Date</span>
+                  <span style="font-weight: var(--fw-medium);" id="summaryDate">-</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding-bottom: var(--space-2); border-bottom: 1px solid var(--clr-border);">
+                  <span style="color: var(--clr-text-muted);">Heure</span>
+                  <span style="font-weight: var(--fw-medium);" id="summaryTime">-</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding-bottom: var(--space-2); border-bottom: 1px solid var(--clr-border);">
+                  <span style="color: var(--clr-text-muted);">Nom</span>
+                  <span style="font-weight: var(--fw-medium);" id="summaryName">-</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding-bottom: var(--space-2); border-bottom: 1px solid var(--clr-border);">
+                  <span style="color: var(--clr-text-muted);">Téléphone</span>
+                  <span style="font-weight: var(--fw-medium);" id="summaryPhone">-</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: var(--space-4); padding: var(--space-3); background-color: var(--clr-bg-green); border-radius: var(--radius-md);">
+              <p style="font-size: var(--fs-small); margin: 0;">
+                <i data-lucide="info" style="width: 16px; height: 16px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
+                Un numéro de confirmation vous sera envoyé par WhatsApp. Notre équipe vous contactera sous 24 heures.
+              </p>
+            </div>
+          </div>
+
+          <!-- Success Message -->
+          <div class="step-panel" data-step="success" style="text-align: center;">
+            <div style="width: 80px; height: 80px; background-color: var(--clr-bg-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <i data-lucide="check" style="width: 40px; height: 40px; color: var(--clr-success);"></i>
+            </div>
+            <h3 style="font-size: var(--fs-h3); margin-bottom: var(--space-3);">Rendez-vous confirmé !</h3>
+            <p style="margin-bottom: var(--space-4);">Votre demande a été enregistrée avec succès.</p>
+            <div class="info-card" style="background-color: var(--clr-bg-soft); margin-bottom: var(--space-4);">
+              <p style="font-size: var(--fs-small); color: var(--clr-text-muted); margin-bottom: var(--space-1);">Numéro de confirmation</p>
+              <p style="font-size: 24px; font-weight: var(--fw-bold); color: var(--clr-primary);" id="confirmationNumber">HRC-XXXXXX</p>
+            </div>
+            <p style="font-size: var(--fs-small); color: var(--clr-text-secondary); margin-bottom: var(--space-4);">
+              Nous vous contacterons sous 24 heures pour confirmer votre rendez-vous.<br>
+              Questions ? Contactez-nous sur WhatsApp:
+            </p>
+            <a href="https://wa.me/50936441617" class="btn btn-outline btn-pill" style="margin-right: var(--space-2);">
+              <i data-lucide="message-circle"></i> WhatsApp
+            </a>
+            <a href="../index.html" class="btn btn-primary btn-pill">Retour à l'accueil</a>
+          </div>
+
+          <!-- Form Navigation -->
+          <div class="steps-actions" id="formNavigation">
+            <button type="button" class="btn btn-outline" id="prevBtn" style="display: none;">Précédent</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Continuer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/appointment.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

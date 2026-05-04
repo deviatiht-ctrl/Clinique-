@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Équipe | Haiti Reh-Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="../../index.html"><img src="../../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Tableau de bord</a>
+      <a href="rendez-vous.html" class="sidebar-link"><i data-lucide="calendar"></i> Rendez-vous</a>
+      <a href="patients.html" class="sidebar-link"><i data-lucide="users"></i> Patients</a>
+      <a href="blog.html" class="sidebar-link"><i data-lucide="file-text"></i> Blog</a>
+      <a href="galerie.html" class="sidebar-link"><i data-lucide="image"></i> Galerie</a>
+      <a href="equipe.html" class="sidebar-link active"><i data-lucide="user-cog"></i> Équipe</a>
+      <a href="parametres.html" class="sidebar-link"><i data-lucide="settings"></i> Paramètres</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" onclick="logout()" class="sidebar-link"><i data-lucide="log-out"></i> Déconnexion</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 class="admin-title">Gestion de l'Équipe</h1>
+      <div class="admin-actions">
+        <button class="btn btn-primary btn-pill" onclick="addMember()">
+          <i data-lucide="plus"></i> Ajouter un membre
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="info-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Fonction</th>
+              <th>Certification</th>
+              <th>Expérience</th>
+              <th>En vedette</th>
+              <th>Ordre</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="teamTableBody">
+            <tr>
+              <td style="display: flex; align-items: center; gap: var(--space-2);">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=40&h=40&fit=crop&crop=face" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <span style="font-weight: var(--fw-medium);">Edelyne Estimphil</span>
+              </td>
+              <td>Co-PDG, Responsable Administrative</td>
+              <td>ISPO Catégorie II</td>
+              <td>21 ans</td>
+              <td><i data-lucide="check" style="color: var(--clr-secondary);"></i></td>
+              <td>1</td>
+              <td>
+                <button class="action-btn"><i data-lucide="edit"></i></button>
+                <button class="action-btn delete"><i data-lucide="trash-2"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td style="display: flex; align-items: center; gap: var(--space-2);">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=40&h=40&fit=crop&crop=face" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <span style="font-weight: var(--fw-medium);">Guirna Morisset</span>
+              </td>
+              <td>Co-PDG, Responsable Finance</td>
+              <td>ISPO Catégorie II</td>
+              <td>11 ans</td>
+              <td><i data-lucide="check" style="color: var(--clr-secondary);"></i></td>
+              <td>2</td>
+              <td>
+                <button class="action-btn"><i data-lucide="edit"></i></button>
+                <button class="action-btn delete"><i data-lucide="trash-2"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td style="display: flex; align-items: center; gap: var(--space-2);">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=40&h=40&fit=crop&crop=face" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <span style="font-weight: var(--fw-medium);">Evenie Denizard</span>
+              </td>
+              <td>Co-PDG, Relations Publiques</td>
+              <td>ISPO Catégorie II</td>
+              <td>11 ans</td>
+              <td><i data-lucide="check" style="color: var(--clr-secondary);"></i></td>
+              <td>3</td>
+              <td>
+                <button class="action-btn"><i data-lucide="edit"></i></button>
+                <button class="action-btn delete"><i data-lucide="trash-2"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/api.js"></script>
+  <script src="../../assets/js/auth.js"></script>
+  <script>
+    lucide.createIcons();
+    checkAdminAuth();
+    
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+    
+    function addMember() {
+      alert('Formulaire d\'ajout de membre à implémenter');
+    }
+  </script>
+</body>
+</html>

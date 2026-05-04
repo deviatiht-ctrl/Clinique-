@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: haiti-rehcare-api
+    env: python
+    region: ohio
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./haiti_rehcare.db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@haiti-rehcare.org
+      - key: ADMIN_PASSWORD
+        sync: false

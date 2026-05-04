@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haiti Reh-Care | Centre de Réhabilitation - Haïti</title>
+  <meta name="description" content="Haiti Reh-Care offre des soins orthopédiques et prothétiques de haute qualité à Delmas 75, Haïti. Prothèses, orthèses, kinésithérapie.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      
+      <div class="navbar-nav">
+        <a href="index.html" class="nav-link active">Accueil</a>
+        <a href="pages/services.html" class="nav-link">Services</a>
+        <a href="pages/equipe.html" class="nav-link">Notre Équipe</a>
+        <a href="pages/blog.html" class="nav-link">Blog</a>
+        <a href="pages/galerie.html" class="nav-link">Galerie</a>
+        <a href="pages/don.html" class="nav-link">Don</a>
+        <a href="pages/contact.html" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <a href="pages/login.html" class="nav-admin" id="adminLink">Admin</a>
+        <a href="pages/rendez-vous.html" class="btn btn-primary btn-pill">
+          <i data-lucide="calendar-check"></i> Prendre RDV
+        </a>
+        <div class="user-menu" id="userMenu" style="display: none;">
+          <div class="user-avatar" id="userAvatar"></div>
+          <div class="user-dropdown">
+            <a href="pages/suivi-patient.html"><i data-lucide="layout-dashboard"></i> Tableau de bord</a>
+            <a href="pages/suivi-patient.html?tab=appointments"><i data-lucide="calendar"></i> Mes rendez-vous</a>
+            <a href="pages/suivi-patient.html?tab=records"><i data-lucide="file-text"></i> Mon dossier</a>
+            <div class="dropdown-divider"></div>
+            <button onclick="logout()"><i data-lucide="log-out"></i> Déconnexion</button>
+          </div>
+        </div>
+        <a href="pages/login.html" class="btn btn-outline btn-sm" id="loginBtn">
+          <i data-lucide="user"></i>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+      </a>
+      <button class="mobile-toggle" id="mobileClose">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link active">Accueil</a>
+      <a href="pages/services.html" class="nav-link">Services</a>
+      <a href="pages/equipe.html" class="nav-link">Notre Équipe</a>
+      <a href="pages/blog.html" class="nav-link">Blog</a>
+      <a href="pages/galerie.html" class="nav-link">Galerie</a>
+      <a href="pages/don.html" class="nav-link">Don</a>
+      <a href="pages/contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="mobile-actions">
+      <a href="pages/rendez-vous.html" class="btn btn-primary btn-pill">Prendre RDV</a>
+      <a href="pages/login.html" class="btn btn-outline">Se connecter</a>
+    </div>
+  </div>
+
+  <main class="page-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+            Centre de Réhabilitation · Delmas 75, Haïti
+          </div>
+          <h1 class="hero-title">
+            Retrouvez votre <span class="highlight-blue">mobilité</span>. Retrouvez votre <span class="highlight-green">vie</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Haiti Reh-Care offre des soins orthopédiques et prothétiques de haute qualité — accessibles à tous les Haïtiens, quel que soit leur situation économique.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" id="statPatients">500+</span>
+              <span class="stat-label">Patients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="statProsthetics">800+</span>
+              <span class="stat-label">Prothèses</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Experts</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10</span>
+              <span class="stat-label">Années</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="pages/rendez-vous.html" class="btn btn-primary btn-pill btn-lg">
+              <i data-lucide="calendar-check"></i> Prendre un Rendez-vous
+            </a>
+            <a href="pages/services.html" class="btn btn-outline btn-pill btn-lg">
+              Découvrir nos services
+            </a>
+          </div>
+          <div class="hero-reassurance">
+            <span class="reassurance-item">
+              <i data-lucide="check-circle"></i> Première consultation gratuite
+            </span>
+            <span class="reassurance-item">
+              <i data-lucide="phone"></i> +509 3644-1617
+            </span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame"></div>
+          <div class="hero-image hero-image-large">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" alt="Équipe médicale au travail" loading="lazy">
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=600&fit=crop" alt="Patient avec prothèse" loading="lazy">
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=400&h=300&fit=crop" alt="Équipement médical" loading="lazy">
+            <div class="hero-badge">
+              <i data-lucide="award"></i> Fondé en 2015
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Ticker -->
+    <section class="stats-ticker">
+      <div class="stats-ticker-inner">
+        <span class="ticker-item"><i data-lucide="users"></i> Patients aidés</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="activity"></i> Prothèses fabriquées</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="calendar"></i> Années d'expérience</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="award"></i> Orthoprothésistes certifiés ISPO</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="globe"></i> Partenaires internationaux</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="heart"></i> Confortabilité - Esthéticité - Fonctionalité</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="users"></i> Patients aidés</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="activity"></i> Prothèses fabriquées</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="calendar"></i> Années d'expérience</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="award"></i> Orthoprothésistes certifiés ISPO</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="globe"></i> Partenaires internationaux</span>
+        <span class="ticker-separator"></span>
+        <span class="ticker-item"><i data-lucide="heart"></i> Confortabilité - Esthéticité - Fonctionalité</span>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Ce que nous traitons</h2>
+          <p>Nos spécialistes offrent une gamme complète de services d'orthopédie et de réhabilitation pour vous aider à retrouver votre mobilité.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+          <!-- Services loaded dynamically -->
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="activity"></i></div>
+            <h3>Prothèses des membres inférieurs</h3>
+            <p>Prothèse tibiale, fémorale, Syme, partielle — conçues sur mesure pour chaque patient.</p>
+            <div class="service-pathologies">
+              <span class="pill pill-gray">Tibia</span>
+              <span class="pill pill-gray">Fémur</span>
+              <span class="pill pill-gray">Syme</span>
+            </div>
+            <a href="pages/services.html" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="hand"></i></div>
+            <h3>Prothèses des membres supérieurs</h3>
+            <p>Prothèse transradiale, transhumérale, partielle pour retrouver la fonctionnalité du bras.</p>
+            <div class="service-pathologies">
+              <span class="pill pill-gray">Avant-bras</span>
+              <span class="pill pill-gray">Bras</span>
+              <span class="pill pill-gray">Main</span>
+            </div>
+            <a href="pages/services.html" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="shield"></i></div>
+            <h3>Orthèses et corsets</h3>
+            <p>Corset scoliotique, orthèse de genou, cheville-pied pour le soutien et la correction.</p>
+            <div class="service-pathologies">
+              <span class="pill pill-gray">Scoliose</span>
+              <span class="pill pill-gray">Genou</span>
+              <span class="pill pill-gray">Cheville</span>
+            </div>
+            <a href="pages/services.html" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="heart-pulse"></i></div>
+            <h3>Kinésithérapie & Rééducation</h3>
+            <p>Rééducation post-amputation, mobilité fonctionnelle, renforcement musculaire.</p>
+            <div class="service-pathologies">
+              <span class="pill pill-gray">Post-amputation</span>
+              <span class="pill pill-gray">Mobilité</span>
+              <span class="pill pill-gray">Renforcement</span>
+            </div>
+            <a href="pages/services.html" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="baby"></i></div>
+            <h3>Appareillage pédiatrique</h3>
+            <p>Appareils spécialement conçus pour les enfants, avec suivi de croissance.</p>
+            <div class="service-pathologies">
+              <span class="pill pill-gray">Enfants</span>
+              <span class="pill pill-gray">Croissance</span>
+              <span class="pill pill-gray">Adaptation</span>
+            </div>
+            <a href="pages/services.html" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="footprints"></i></div>
+            <h3>Chaussures orthopédiques</h3>
+            <p>Semelles orthopédiques, chaussures sur mesure pour le confort quotidien.</p>
+            <div class="service-pathologies">
+              <span class="pill pill-gray">Semelles</span>
+              <span class="pill pill-gray">Sur mesure</span>
+              <span class="pill pill-gray">Confort</span>
+            </div>
+            <a href="pages/services.html" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section section-alt why-section">
+      <div class="container">
+        <div class="why-image">
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=400&fit=crop" alt="Notre équipe au travail" loading="lazy">
+        </div>
+        <div>
+          <div class="section-header">
+            <h2>Pourquoi Haiti Reh-Care</h2>
+            <p>Nous nous engageons à offrir les meilleurs soins orthopédiques accessibles à tous les Haïtiens.</p>
+          </div>
+          <div class="why-features">
+            <div class="feature-item">
+              <div class="feature-icon"><i data-lucide="award"></i></div>
+              <div class="feature-content">
+                <h4>Certifiés ISPO Catégorie 2</h4>
+                <p>Nos orthoprothésistes sont certifiés internationalement par l'International Society for Prosthetics and Orthotics.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i data-lucide="users"></i></div>
+              <div class="feature-content">
+                <h4>Accessible à tous</h4>
+                <p>Nous offrons des soins adaptés à toutes les situations économiques, avec des appareils gratuits pour les plus vulnérables.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i data-lucide="graduation-cap"></i></div>
+              <div class="feature-content">
+                <h4>21+ ans d'expérience</h4>
+                <p>Notre équipe multidisciplinaire cumule plus de deux décennies d'expertise en orthopédie.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i data-lucide="wrench"></i></div>
+              <div class="feature-content">
+                <h4>Matériaux durables</h4>
+                <p>Nous utilisons des équipements modernes et des matériaux de haute qualité pour des prothèses durables.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i data-lucide="gift"></i></div>
+              <div class="feature-content">
+                <h4>Appareils gratuits</h4>
+                <p>Programme de soutien pour les patients vulnérables qui ne peuvent pas payer.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i data-lucide="map-pin"></i></div>
+              <div class="feature-content">
+                <h4>Visites à domicile</h4>
+                <p>Nous effectuons des suivis à domicile pour les patients qui ne peuvent pas se déplacer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Prêt à commencer votre rééducation ?</h2>
+          <p>Prenez rendez-vous en ligne. Notre équipe vous contactera sous 24 heures pour confirmer.</p>
+          <a href="pages/rendez-vous.html" class="btn btn-outline-white btn-pill btn-lg">
+            <i data-lucide="calendar-check"></i> Prendre Rendez-vous
+          </a>
+          <div class="cta-trust">
+            <span class="trust-item"><i data-lucide="lock"></i> Données sécurisées</span>
+            <span class="trust-item"><i data-lucide="clock"></i> Réponse en 24h</span>
+            <span class="trust-item"><i data-lucide="phone"></i> Gratuit</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Preview Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2>Rencontrez nos experts</h2>
+          <p>Une équipe passionnée dédiée à votre rétablissement</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" alt="Edelyne Estimphil" class="team-photo">
+            <span class="team-cert"><i data-lucide="award" style="width: 12px; height: 12px;"></i> ISPO Catégorie II</span>
+            <h3>Edelyne Estimphil</h3>
+            <span class="team-role">Co-PDG, Responsable Administrative</span>
+            <p class="team-bio">Première femme haïtienne dans le domaine avec 21 ans d'expérience en orthopédie.</p>
+          </div>
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face" alt="Guirna Morisset" class="team-photo">
+            <span class="team-cert"><i data-lucide="award" style="width: 12px; height: 12px;"></i> ISPO Catégorie II</span>
+            <h3>Guirna Morisset</h3>
+            <span class="team-role">Co-PDG, Responsable Finance</span>
+            <p class="team-bio">Formation: Université Don Bosco, El Salvador. 11 ans d'expérience.</p>
+          </div>
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop&crop=face" alt="Evenie Denizard" class="team-photo">
+            <span class="team-cert"><i data-lucide="award" style="width: 12px; height: 12px;"></i> ISPO Catégorie II</span>
+            <h3>Evenie Denizard</h3>
+            <span class="team-role">Co-PDG, Responsable Relations Publiques</span>
+            <p class="team-bio">11 ans d'expérience en orthopédie et gestion des relations patients.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: var(--space-6);">
+          <a href="pages/equipe.html" class="btn btn-outline btn-pill">Voir toute l'équipe <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2>Ce que disent nos patients</h2>
+          <p>Témoignages de ceux qui ont retrouvé leur mobilité</p>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonials-track" id="testimonialsTrack">
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"Grâce à Haiti Reh-Care, j'ai pu retrouver mon indépendance. Ma prothèse de jambe est confortable et me permet de travailler normalement."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">JM</div>
+                <div class="testimonial-info">
+                  <h5>Jean M.</h5>
+                  <span>Prothèse tibiale</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"L'équipe m'a accompagné tout au long de ma rééducation. Leur professionnalisme et leur humanité sont remarquables."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">MD</div>
+                <div class="testimonial-info">
+                  <h5>Marie D.</h5>
+                  <span>Orthèse de genou</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"Mon fils a reçu une prothèse adaptée à sa croissance. Le suivi pédiatrique est excellent et rassurant pour les parents."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">PL</div>
+                <div class="testimonial-info">
+                  <h5>Pierre L.</h5>
+                  <span>Parent d'un patient pédiatrique</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-quote">"J'ai reçu ma prothèse gratuitement grâce au programme de soutien. Je ne sais pas comment les remercier pour ce cadeau de mobilité."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">RJ</div>
+                <div class="testimonial-info">
+                  <h5>Robert J.</h5>
+                  <span>Prothèse fémorale</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2>Nos articles médicaux</h2>
+          <p>Informations et conseils de nos spécialistes</p>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card blog-featured">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=500&fit=crop" alt="Pathologies du genou" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Pathologies</span>
+              <h3>Différents types de pathologies fréquentes du genou</h3>
+              <p>Découvrez les principales affections du genou, leurs symptômes et les traitements orthopédiques disponibles pour retrouver une mobilité sans douleur.</p>
+              <div class="blog-card-meta">
+                <span>15 mars 2024</span>
+                <span>5 min de lecture</span>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?w=400&h=250&fit=crop" alt="Scoliose" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Orthèses</span>
+              <h3>Prise en charge scoliose/cyphose/lordose</h3>
+              <p>Les corsets orthopédiques et leur rôle dans le traitement des déformations de la colonne vertébrale.</p>
+              <div class="blog-card-meta">
+                <span>10 mars 2024</span>
+                <span>4 min de lecture</span>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=250&fit=crop" alt="Rééducation" loading="lazy">
+            </div>
+            <div class="blog-card-content">
+              <span class="blog-card-category">Rééducation</span>
+              <h3>L'importance de la rééducation post-amputation</h3>
+              <p>Pourquoi la kinésithérapie est essentielle après une amputation pour une adaptation réussie à la prothèse.</p>
+              <div class="blog-card-meta">
+                <span>5 mars 2024</span>
+                <span>6 min de lecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: var(--space-6);">
+          <a href="pages/blog.html" class="btn btn-outline btn-pill">Tous les articles <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation CTA Section -->
+    <section class="section section-alt donation-section">
+      <div class="container">
+        <div class="donation-content">
+          <div>
+            <h2>Aider un patient à retrouver sa mobilité</h2>
+            <p>Votre don permet d'offrir des prothèses et orthèses gratuites aux patients les plus vulnérables en Haïti. Chaque contribution fait une différence concrète.</p>
+            <div class="donation-impact">
+              <div class="impact-item">
+                <div class="impact-number">150+</div>
+                <div class="impact-label">Appareils offerts</div>
+              </div>
+              <div class="impact-item">
+                <div class="impact-number">200+</div>
+                <div class="impact-label">Vies changées</div>
+              </div>
+              <div class="impact-item">
+                <div class="impact-number">100%</div>
+                <div class="impact-label">À la cause</div>
+              </div>
+            </div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="heart-handshake"></i> Faire un don</h4>
+            <div class="donation-amounts">
+              <button class="amount-btn">$25</button>
+              <button class="amount-btn active">$50</button>
+              <button class="amount-btn">$100</button>
+              <button class="amount-btn">$250</button>
+              <button class="amount-btn">$500</button>
+              <button class="amount-btn">Autre</button>
+            </div>
+            <a href="pages/don.html" class="btn btn-primary btn-pill" style="width: 100%; justify-content: center;">
+              <i data-lucide="heart"></i> Faire un Don
+            </a>
+            <p style="text-align: center; margin-top: var(--space-3); font-size: var(--fs-small); color: var(--clr-text-muted);">
+              Paiement sécurisé · Reçu fiscal disponible
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+          <p>Permettre aux patients de retrouver leur fonction de mobilité. Centre de réhabilitation et d'appareillage orthopédique en Haïti depuis 2015.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+            <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Liens rapides</h4>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="pages/services.html">Services</a>
+            <a href="pages/equipe.html">Notre Équipe</a>
+            <a href="pages/blog.html">Blog</a>
+            <a href="pages/galerie.html">Galerie</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Patients</h4>
+          <div class="footer-links">
+            <a href="pages/rendez-vous.html">Prendre RDV</a>
+            <a href="pages/inscription-patient.html">Inscription</a>
+            <a href="pages/suivi-patient.html">Suivi patient</a>
+            <a href="pages/don.html">Faire un don</a>
+            <a href="pages/contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-column footer-contact">
+          <h4>Contact</h4>
+          <p><i data-lucide="map-pin" style="width: 14px; height: 14px; display: inline;"></i> 22 Rue de la Paix, Petite Place Cazeau<br>Delmas 75, Haïti</p>
+          <p><i data-lucide="phone" style="width: 14px; height: 14px; display: inline;"></i> +509 3644-1617</p>
+          <p><i data-lucide="mail" style="width: 14px; height: 14px; display: inline;"></i> haitirehabilitationcare@gmail.com</p>
+          <p><i data-lucide="clock" style="width: 14px; height: 14px; display: inline;"></i> Lundi - Vendredi, 8h - 15h</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Haiti Reh-Care 2025 | Tous droits réservés</p>
+        <p>Conçu avec soin pour les patients haïtiens</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/homepage.js"></script>
+  
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Hero animation
+    gsap.from('.hero-content > *', {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: 'power2.out'
+    });
+    
+    gsap.from('.hero-visual', {
+      opacity: 0,
+      x: 50,
+      duration: 1,
+      delay: 0.3,
+      ease: 'power2.out'
+    });
+    
+    // Service cards scroll animation
+    gsap.from('.service-card', {
+      scrollTrigger: {
+        trigger: '#services',
+        start: 'top 80%',
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power2.out'
+    });
+    
+    // Feature items animation
+    gsap.from('.feature-item', {
+      scrollTrigger: {
+        trigger: '.why-section',
+        start: 'top 70%',
+      },
+      opacity: 0,
+      x: 30,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power2.out'
+    });
+    
+    // Team cards animation
+    gsap.from('.team-card', {
+      scrollTrigger: {
+        trigger: '.team-grid',
+        start: 'top 80%',
+      },
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.5,
+      stagger: 0.15,
+      ease: 'power2.out'
+    });
+    
+    // Stats counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stat-number');
+      counters.forEach(counter => {
+        const target = counter.textContent;
+        const num = parseInt(target);
+        if (!isNaN(num)) {
+          gsap.from(counter, {
+            textContent: 0,
+            duration: 2,
+            ease: 'power1.out',
+            snap: { textContent: 1 },
+            stagger: 0.2,
+            onUpdate: function() {
+              counter.textContent = Math.ceil(this.targets()[0].textContent) + '+';
+            }
+          });
+        }
+      });
+    }
+    
+    // Trigger counter animation when hero is visible
+    ScrollTrigger.create({
+      trigger: '.hero-stats',
+      start: 'top 80%',
+      onEnter: animateCounters,
+      once: true
+    });
+  </script>
+</body>
+</html>

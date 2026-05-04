@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Galerie | Haiti Reh-Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="../../index.html"><img src="../../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Tableau de bord</a>
+      <a href="rendez-vous.html" class="sidebar-link"><i data-lucide="calendar"></i> Rendez-vous</a>
+      <a href="patients.html" class="sidebar-link"><i data-lucide="users"></i> Patients</a>
+      <a href="blog.html" class="sidebar-link"><i data-lucide="file-text"></i> Blog</a>
+      <a href="galerie.html" class="sidebar-link active"><i data-lucide="image"></i> Galerie</a>
+      <a href="equipe.html" class="sidebar-link"><i data-lucide="user-cog"></i> Équipe</a>
+      <a href="parametres.html" class="sidebar-link"><i data-lucide="settings"></i> Paramètres</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" onclick="logout()" class="sidebar-link"><i data-lucide="log-out"></i> Déconnexion</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 class="admin-title">Gestion de la Galerie</h1>
+      <div class="admin-actions">
+        <input type="file" id="imageUpload" accept="image/*" multiple style="display: none;">
+        <button class="btn btn-primary btn-pill" onclick="document.getElementById('imageUpload').click()">
+          <i data-lucide="upload"></i> Ajouter des images
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Upload Zone -->
+      <div class="info-card" style="margin-bottom: var(--space-4);">
+        <div class="upload-zone" id="uploadZone" style="border: 2px dashed var(--clr-border); border-radius: var(--radius-lg); padding: var(--space-8); text-align: center; color: var(--clr-text-muted);">
+          <i data-lucide="upload-cloud" style="width: 48px; height: 48px; margin-bottom: var(--space-3);"></i>
+          <p style="margin: 0 0 var(--space-2);">Glissez-déposez vos images ici</p>
+          <p style="font-size: var(--fs-small); margin: 0;">ou cliquez pour sélectionner des fichiers (max 5MB par image)</p>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="info-card">
+        <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-4);">
+          <button class="btn btn-primary btn-sm">Toutes</button>
+          <button class="btn btn-outline btn-sm">Notre Clinique</button>
+          <button class="btn btn-outline btn-sm">Notre Équipe</button>
+          <button class="btn btn-outline btn-sm">Nos Patients</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);">
+          <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=300&h=200&fit=crop" alt="" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="position: absolute; top: var(--space-2); right: var(--space-2); display: flex; gap: var(--space-1);">
+              <button class="action-btn" style="background: white;"><i data-lucide="star"></i></button>
+              <button class="action-btn delete" style="background: white;"><i data-lucide="trash-2"></i></button>
+            </div>
+          </div>
+          <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&h=200&fit=crop" alt="" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="position: absolute; top: var(--space-2); right: var(--space-2); display: flex; gap: var(--space-1);">
+              <button class="action-btn" style="background: white;"><i data-lucide="star"></i></button>
+              <button class="action-btn delete" style="background: white;"><i data-lucide="trash-2"></i></button>
+            </div>
+          </div>
+          <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=300&h=200&fit=crop" alt="" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="position: absolute; top: var(--space-2); right: var(--space-2); display: flex; gap: var(--space-1);">
+              <button class="action-btn" style="background: white;"><i data-lucide="star"></i></button>
+              <button class="action-btn delete" style="background: white;"><i data-lucide="trash-2"></i></button>
+            </div>
+          </div>
+          <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 2px solid var(--clr-secondary);">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop" alt="" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="position: absolute; top: var(--space-2); right: var(--space-2); display: flex; gap: var(--space-1);">
+              <button class="action-btn" style="background: var(--clr-secondary);"><i data-lucide="star" style="color: white;"></i></button>
+              <button class="action-btn delete" style="background: white;"><i data-lucide="trash-2"></i></button>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: var(--clr-secondary); color: white; text-align: center; padding: 4px; font-size: var(--fs-small);">
+              Image en vedette
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/api.js"></script>
+  <script src="../../assets/js/auth.js"></script>
+  <script>
+    lucide.createIcons();
+    checkAdminAuth();
+    
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+    
+    // Drag & drop
+    const uploadZone = document.getElementById('uploadZone');
+    
+    uploadZone.addEventListener('click', () => {
+      document.getElementById('imageUpload').click();
+    });
+    
+    uploadZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadZone.style.borderColor = 'var(--clr-primary)';
+    });
+    
+    uploadZone.addEventListener('dragleave', () => {
+      uploadZone.style.borderColor = 'var(--clr-border)';
+    });
+    
+    uploadZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadZone.style.borderColor = 'var(--clr-border)';
+      alert('Images uploadées! (À connecter avec API)');
+    });
+  </script>
+</body>
+</html>

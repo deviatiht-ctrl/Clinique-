@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord Admin | Haiti Reh-Care</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <img src="../../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+      </div>
+      
+      <nav class="admin-sidebar-nav">
+        <a href="dashboard.html" class="admin-nav-item active">
+          <i data-lucide="layout-dashboard"></i>
+          Tableau de bord
+        </a>
+        <a href="rendez-vous.html" class="admin-nav-item">
+          <i data-lucide="calendar"></i>
+          Rendez-vous
+          <span class="admin-nav-badge" id="pendingBadge">3</span>
+        </a>
+        <a href="patients.html" class="admin-nav-item">
+          <i data-lucide="users"></i>
+          Patients
+          <span class="admin-nav-badge" id="newPatientsBadge">2</span>
+        </a>
+        <a href="blog.html" class="admin-nav-item">
+          <i data-lucide="newspaper"></i>
+          Blog
+        </a>
+        <a href="galerie.html" class="admin-nav-item">
+          <i data-lucide="image"></i>
+          Galerie
+        </a>
+        <a href="equipe.html" class="admin-nav-item">
+          <i data-lucide="user-cog"></i>
+          Équipe
+        </a>
+        <a href="parametres.html" class="admin-nav-item">
+          <i data-lucide="settings"></i>
+          Paramètres
+        </a>
+      </nav>
+      
+      <div class="admin-sidebar-footer">
+        <button onclick="logout()">
+          <i data-lucide="log-out"></i>
+          Déconnexion
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div style="display: flex; align-items: center; gap: var(--space-3);">
+          <button class="mobile-menu-toggle" id="sidebarToggle">
+            <i data-lucide="menu"></i>
+          </button>
+          <h1>Tableau de bord</h1>
+        </div>
+        <div class="admin-header-actions">
+          <a href="../../index.html" class="btn btn-outline btn-sm" target="_blank">
+            <i data-lucide="external-link"></i> Voir le site
+          </a>
+          <div class="user-avatar">A</div>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <!-- KPI Cards -->
+        <div class="admin-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon">
+              <i data-lucide="calendar-check"></i>
+            </div>
+            <div class="kpi-content">
+              <div class="kpi-label">RDV aujourd'hui</div>
+              <div class="kpi-value" id="todayAppointments">4</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background-color: var(--clr-bg-green); color: var(--clr-success);">
+              <i data-lucide="user-plus"></i>
+            </div>
+            <div class="kpi-content">
+              <div class="kpi-label">Nouveaux patients (mois)</div>
+              <div class="kpi-value" id="newPatients">12</div>
+              <div class="kpi-change positive">+3 ce mois</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background-color: #FEF3C7; color: var(--clr-warning);">
+              <i data-lucide="users"></i>
+            </div>
+            <div class="kpi-content">
+              <div class="kpi-label">Patients actifs</div>
+              <div class="kpi-value" id="totalPatients">156</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background-color: #FEE2E2; color: var(--clr-danger);">
+              <i data-lucide="clock"></i>
+            </div>
+            <div class="kpi-content">
+              <div class="kpi-label">En attente confirmation</div>
+              <div class="kpi-value" id="pendingAppointments">3</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="admin-charts">
+          <div class="chart-card">
+            <h3>Rendez-vous par mois</h3>
+            <canvas id="appointmentsChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Patients par type de condition</h3>
+            <canvas id="conditionsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Today's Appointments -->
+        <div class="data-table-container">
+          <div class="data-table-header">
+            <h3>Rendez-vous du jour</h3>
+            <a href="rendez-vous.html" class="btn btn-primary btn-sm">Voir tous</a>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Heure</th>
+                <th>Patient</th>
+                <th>Type</th>
+                <th>Statut</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="todayTableBody">
+              <tr>
+                <td>09:00</td>
+                <td>Jean Baptiste</td>
+                <td>Suivi prothèse</td>
+                <td><span class="status-badge status-confirmed"><i data-lucide="check-circle" style="width: 12px; height: 12px;"></i> Confirmé</span></td>
+                <td>
+                  <div class="table-actions-cell">
+                    <button class="action-btn" title="Voir"><i data-lucide="eye"></i></button>
+                    <button class="action-btn edit" title="WhatsApp"><i data-lucide="message-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>10:00</td>
+                <td>Marie Joseph</td>
+                <td>Première consultation</td>
+                <td><span class="status-badge status-confirmed"><i data-lucide="check-circle" style="width: 12px; height: 12px;"></i> Confirmé</span></td>
+                <td>
+                  <div class="table-actions-cell">
+                    <button class="action-btn" title="Voir"><i data-lucide="eye"></i></button>
+                    <button class="action-btn edit" title="WhatsApp"><i data-lucide="message-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>11:00</td>
+                <td>Pierre Louis</td>
+                <td>Prise de mesures</td>
+                <td><span class="status-badge status-pending"><i data-lucide="clock" style="width: 12px; height: 12px;"></i> En attente</span></td>
+                <td>
+                  <div class="table-actions-cell">
+                    <button class="action-btn" title="Voir"><i data-lucide="eye"></i></button>
+                    <button class="action-btn edit" title="Confirmer"><i data-lucide="check"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>14:00</td>
+                <td>Sophie Dupont</td>
+                <td>Rééducation</td>
+                <td><span class="status-badge status-confirmed"><i data-lucide="check-circle" style="width: 12px; height: 12px;"></i> Confirmé</span></td>
+                <td>
+                  <div class="table-actions-cell">
+                    <button class="action-btn" title="Voir"><i data-lucide="eye"></i></button>
+                    <button class="action-btn edit" title="WhatsApp"><i data-lucide="message-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../../assets/js/api.js"></script>
+  <script src="../../assets/js/auth.js"></script>
+  <script src="../../assets/js/admin/dashboard.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    // Check auth
+    checkAuth('admin');
+    
+    // Mobile sidebar toggle
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+      document.querySelector('.admin-sidebar').classList.toggle('active');
+    });
+    
+    // Initialize Charts
+    const appointmentsCtx = document.getElementById('appointmentsChart').getContext('2d');
+    new Chart(appointmentsCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin'],
+        datasets: [{
+          label: 'Rendez-vous',
+          data: [45, 52, 48, 61, 55, 42],
+          backgroundColor: '#1565C0',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: '#E2E8F0' }
+          },
+          x: {
+            grid: { display: false }
+          }
+        }
+      }
+    });
+    
+    const conditionsCtx = document.getElementById('conditionsChart').getContext('2d');
+    new Chart(conditionsCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Amputation', 'Scoliose', 'Pathologie genou', 'Autre'],
+        datasets: [{
+          data: [35, 25, 20, 20],
+          backgroundColor: ['#1565C0', '#2E7D32', '#1976D2', '#94A3B8'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'right'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

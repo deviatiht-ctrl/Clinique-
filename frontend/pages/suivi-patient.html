@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivi Patient | Haiti Reh-Care</title>
+  <meta name="description" content="Tableau de bord patient pour suivre vos rendez-vous et traitements.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      <div class="navbar-nav">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="rendez-vous.html" class="nav-link">Rendez-vous</a>
+        <a href="suivi-patient.html" class="nav-link active">Mon Compte</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="btn btn-outline btn-sm" onclick="logout()">
+          <i data-lucide="log-out"></i> Déconnexion
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container" style="padding: var(--space-6) 0;">
+      <div style="display: grid; grid-template-columns: 300px 1fr; gap: var(--space-6);">
+        <!-- Sidebar -->
+        <aside>
+          <div class="info-card" style="padding: var(--space-4); margin-bottom: var(--space-4);">
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 80px; height: 80px; background-color: var(--clr-bg-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                <i data-lucide="user" style="width: 40px; height: 40px; color: var(--clr-primary);"></i>
+              </div>
+              <h3 style="margin: 0;">Jean Baptiste</h3>
+              <p style="font-size: var(--fs-small); color: var(--clr-text-muted); margin: 4px 0 0;">Code: P20240101001</p>
+            </div>
+          </div>
+
+          <div class="info-card" style="padding: 0; overflow: hidden;">
+            <a href="#" class="nav-item active" onclick="showSection('overview')">
+              <i data-lucide="layout-dashboard"></i> Vue d'ensemble
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('appointments')">
+              <i data-lucide="calendar"></i> Mes rendez-vous
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('treatments')">
+              <i data-lucide="stethoscope"></i> Mon traitement
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('documents')">
+              <i data-lucide="file-text"></i> Documents
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('profile')">
+              <i data-lucide="settings"></i> Mon profil
+            </a>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div>
+          <!-- Overview Section -->
+          <div id="section-overview">
+            <h1 style="margin-bottom: var(--space-4);">Bonjour, Jean</h1>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-bottom: var(--space-6);">
+              <div class="info-card" style="border-left: 4px solid var(--clr-primary);">
+                <h4 style="font-size: var(--fs-small); color: var(--clr-text-muted); margin-bottom: var(--space-1);">Prochain rendez-vous</h4>
+                <div style="font-size: 24px; font-weight: var(--fw-bold); color: var(--clr-primary);">15 Mars</div>
+                <p style="font-size: var(--fs-small); margin: 0;">9h00 - Suivi prothèse</p>
+              </div>
+              <div class="info-card" style="border-left: 4px solid var(--clr-secondary);">
+                <h4 style="font-size: var(--fs-small); color: var(--clr-text-muted); margin-bottom: var(--space-1);">Progression</h4>
+                <div style="font-size: 24px; font-weight: var(--fw-bold); color: var(--clr-secondary);">75%</div>
+                <p style="font-size: var(--fs-small); margin: 0;">Rééducation en cours</p>
+              </div>
+              <div class="info-card" style="border-left: 4px solid var(--clr-accent);">
+                <h4 style="font-size: var(--fs-small); color: var(--clr-text-muted); margin-bottom: var(--space-1);">Rendez-vous</h4>
+                <div style="font-size: 24px; font-weight: var(--fw-bold); color: var(--clr-accent);">8</div>
+                <p style="font-size: var(--fs-small); margin: 0;">Total à ce jour</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+                <h3 style="margin: 0;">Rendez-vous à venir</h3>
+                <a href="rendez-vous.html" class="btn btn-primary btn-sm">Nouveau RDV</a>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Type</th>
+                    <th>Statut</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15 Mars 2024</td>
+                    <td>09:00</td>
+                    <td>Suivi prothèse</td>
+                    <td><span class="pill pill-blue">Confirmé</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Other sections hidden by default -->
+          <div id="section-appointments" style="display: none;">
+            <h2>Mes rendez-vous</h2>
+            <p>Historique complet à venir...</p>
+          </div>
+          <div id="section-treatments" style="display: none;">
+            <h2>Mon traitement</h2>
+            <p>Détails du traitement à venir...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care" style="height: 40px;">
+          <p>© Haiti Reh-Care 2025</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    function showSection(section) {
+      // Hide all sections
+      document.getElementById('section-overview').style.display = 'none';
+      document.getElementById('section-appointments').style.display = 'none';
+      document.getElementById('section-treatments').style.display = 'none';
+      
+      // Show selected
+      document.getElementById('section-' + section).style.display = 'block';
+      
+      // Update active nav
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+    
+    function logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '../index.html';
+    }
+  </script>
+</body>
+</html>

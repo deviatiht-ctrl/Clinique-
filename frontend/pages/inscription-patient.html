@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription Patient | Haiti Reh-Care</title>
+  <meta name="description" content="Inscrivez-vous comme patient pour accéder au suivi en ligne.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/forms.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo" style="height: 40px;">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      <div class="navbar-nav">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="equipe.html" class="nav-link">Notre Équipe</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="galerie.html" class="nav-link">Galerie</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="rendez-vous.html" class="btn btn-primary btn-pill"><i data-lucide="calendar-check"></i> Prendre RDV</a>
+        <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="navbar-logo"><img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+      <button class="mobile-toggle" id="mobileClose"><i data-lucide="x"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="equipe.html" class="nav-link">Notre Équipe</a>
+    </nav>
+  </div>
+
+  <main class="page-content">
+    <section style="padding: var(--space-12) 0; background-color: var(--clr-bg-blue);">
+      <div class="container" style="max-width: 700px;">
+        <div style="text-align: center; margin-bottom: var(--space-6);">
+          <div style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background-color: var(--clr-bg-green); color: var(--clr-secondary); border-radius: var(--radius-md); font-weight: var(--fw-medium);">
+            <i data-lucide="user-plus" style="width: 18px; height: 18px;"></i>
+            Espace patient
+          </div>
+          <h1 style="font-size: var(--fs-h2); font-family: var(--font-display); margin: var(--space-3) 0;">Inscription Patient</h1>
+          <p style="font-size: 18px; color: var(--clr-text-secondary);">Créez votre compte pour accéder à votre suivi en ligne.</p>
+        </div>
+
+        <div class="info-card" style="padding: var(--space-6);">
+          <form id="registerForm">
+            <h3 style="margin-bottom: var(--space-4);">Informations personnelles</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nom <span class="required">*</span></label>
+                <input type="text" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Prénom <span class="required">*</span></label>
+                <input type="text" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Date de naissance</label>
+              <input type="date" class="form-input">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Téléphone <span class="required">*</span></label>
+                <input type="tel" class="form-input" placeholder="+509 XXXX XXXX" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">WhatsApp</label>
+                <input type="tel" class="form-input" placeholder="+509 XXXX XXXX">
+                <label class="checkbox-label" style="margin-top: var(--space-1);">
+                  <input type="checkbox" checked> Même numéro que le téléphone
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email <span class="required">*</span></label>
+              <input type="email" class="form-input" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Département</label>
+                <select class="form-select">
+                  <option value="">Choisir...</option>
+                  <option value="ouest">Ouest</option>
+                  <option value="artibonite">Artibonite</option>
+                  <option value="nord">Nord</option>
+                  <option value="sud">Sud</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Commune</label>
+                <input type="text" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Adresse complète</label>
+              <textarea class="form-textarea" rows="2"></textarea>
+            </div>
+
+            <hr style="margin: var(--space-6) 0; border-color: var(--clr-border);">
+
+            <h3 style="margin-bottom: var(--space-4);">Mot de passe</h3>
+            <div class="form-group">
+              <label class="form-label">Mot de passe <span class="required">*</span></label>
+              <input type="password" class="form-input" minlength="8" required>
+              <span class="help-text">Minimum 8 caractères</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Confirmer le mot de passe <span class="required">*</span></label>
+              <input type="password" class="form-input" required>
+            </div>
+
+            <div class="consent-box">
+              <input type="checkbox" id="terms" required>
+              <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a> *</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-pill btn-lg" style="width: 100%; margin-top: var(--space-4);">
+              <i data-lucide="user-plus"></i> Créer mon compte
+            </button>
+          </form>
+
+          <div style="text-align: center; margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--clr-border);">
+            <p style="margin: 0;">Déjà un compte ? <a href="login.html" style="font-weight: var(--fw-medium);">Se connecter</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+          <p>Permettre aux patients de retrouver leur fonction de mobilité.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p>+509 3644-1617</p>
+          <p>haitirehabilitationcare@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Haiti Reh-Care 2025 | Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    document.getElementById('registerForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Compte créé avec succès ! Vous allez recevoir un email de confirmation.');
+    });
+  </script>
+</body>
+</html>

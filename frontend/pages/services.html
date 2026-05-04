@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Services | Haiti Reh-Care</title>
+  <meta name="description" content="Découvrez nos services d'orthopédie: prothèses, orthèses, kinésithérapie, appareillage pédiatrique. Centre de réhabilitation à Delmas 75, Haïti.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/sections.css">
+  <link rel="stylesheet" href="../assets/css/cards.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- Navigation (same as index) -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      
+      <div class="navbar-nav">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="equipe.html" class="nav-link">Notre Équipe</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="galerie.html" class="nav-link">Galerie</a>
+        <a href="don.html" class="nav-link">Don</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <a href="login.html" class="nav-admin" id="adminLink">Admin</a>
+        <a href="rendez-vous.html" class="btn btn-primary btn-pill">
+          <i data-lucide="calendar-check"></i> Prendre RDV
+        </a>
+        <a href="login.html" class="btn btn-outline btn-sm" id="loginBtn">
+          <i data-lucide="user"></i>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+      </a>
+      <button class="mobile-toggle" id="mobileClose">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="equipe.html" class="nav-link">Notre Équipe</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="don.html" class="nav-link">Don</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="mobile-actions">
+      <a href="rendez-vous.html" class="btn btn-primary btn-pill">Prendre RDV</a>
+    </div>
+  </div>
+
+  <main class="page-content">
+    <!-- Page Header -->
+    <section style="padding: var(--space-12) 0 var(--space-6); background-color: var(--clr-bg-blue);">
+      <div class="container">
+        <div class="eyebrow eyebrow-green">
+          <i data-lucide="stethoscope" style="width: 14px; height: 14px;"></i>
+          Expertise médicale
+        </div>
+        <h1 style="font-size: var(--fs-h2); font-family: var(--font-display); margin-bottom: var(--space-3);">Nos Services</h1>
+        <p style="font-size: 18px; color: var(--clr-text-secondary); max-width: 600px;">
+          Une gamme complète de soins orthopédiques et de réhabilitation pour vous accompagner dans votre rétablissement.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section class="section">
+      <div class="container">
+        <!-- Service 1 -->
+        <div class="service-detail" style="margin-bottom: var(--space-12);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;">
+            <div>
+              <div style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background-color: var(--clr-bg-blue); color: var(--clr-primary); border-radius: var(--radius-md); margin-bottom: var(--space-3);">
+                <i data-lucide="activity" style="width: 20px; height: 20px;"></i>
+                <span style="font-weight: var(--fw-semibold);">Membres Inférieurs</span>
+              </div>
+              <h2 style="font-size: var(--fs-h3); margin-bottom: var(--space-3);">Prothèses des membres inférieurs</h2>
+              <p style="margin-bottom: var(--space-3);">Nous concevons et fabriquons des prothèses sur mesure pour les amputations des membres inférieurs. Chaque prothèse est adaptée aux besoins spécifiques du patient pour garantir confort, fonctionnalité et esthétique.</p>
+              <ul style="list-style: disc; padding-left: var(--space-4); color: var(--clr-text-secondary); margin-bottom: var(--space-4);">
+                <li style="margin-bottom: var(--space-2);">Prothèse tibiale ( sous le genou )</li>
+                <li style="margin-bottom: var(--space-2);">Prothèse fémorale ( au-dessus du genou )</li>
+                <li style="margin-bottom: var(--space-2);">Prothèse de Syme ( cheville )</li>
+                <li style="margin-bottom: var(--space-2);">Prothèse partielle du pied</li>
+              </ul>
+              <a href="rendez-vous.html?service=prothese-inferieure" class="btn btn-primary btn-pill">Prendre RDV pour ce service</a>
+            </div>
+            <div style="border-radius: var(--radius-xl); overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=450&fit=crop" alt="Prothèse membre inférieur" style="width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-detail" style="margin-bottom: var(--space-12);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;">
+            <div style="order: 2;">
+              <div style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background-color: var(--clr-bg-blue); color: var(--clr-primary); border-radius: var(--radius-md); margin-bottom: var(--space-3);">
+                <i data-lucide="hand" style="width: 20px; height: 20px;"></i>
+                <span style="font-weight: var(--fw-semibold);">Membres Supérieurs</span>
+              </div>
+              <h2 style="font-size: var(--fs-h3); margin-bottom: var(--space-3);">Prothèses des membres supérieurs</h2>
+              <p style="margin-bottom: var(--space-3);">Nos prothèses des membres supérieurs sont conçues pour restaurer la fonctionnalité et l'indépendance des patients. Nous proposons des solutions mécaniques et myoélectriques selon les besoins.</p>
+              <ul style="list-style: disc; padding-left: var(--space-4); color: var(--clr-text-secondary); margin-bottom: var(--space-4);">
+                <li style="margin-bottom: var(--space-2);">Prothèse transradiale ( avant-bras )</li>
+                <li style="margin-bottom: var(--space-2);">Prothèse transhumérale ( bras )</li>
+                <li style="margin-bottom: var(--space-2);">Prothèse partielle de la main</li>
+                <li style="margin-bottom: var(--space-2);">Options cosmétiques et fonctionnelles</li>
+              </ul>
+              <a href="rendez-vous.html?service=prothese-superieure" class="btn btn-primary btn-pill">Prendre RDV pour ce service</a>
+            </div>
+            <div style="border-radius: var(--radius-xl); overflow: hidden; order: 1;">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=450&fit=crop" alt="Prothèse membre supérieur" style="width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-detail" style="margin-bottom: var(--space-12);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;">
+            <div>
+              <div style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background-color: var(--clr-bg-blue); color: var(--clr-primary); border-radius: var(--radius-md); margin-bottom: var(--space-3);">
+                <i data-lucide="shield" style="width: 20px; height: 20px;"></i>
+                <span style="font-weight: var(--fw-semibold);">Soutien & Correction</span>
+              </div>
+              <h2 style="font-size: var(--fs-h3); margin-bottom: var(--space-3);">Orthèses et corsets</h2>
+              <p style="margin-bottom: var(--space-3);">Nos orthèses et corsets sont fabriqués sur mesure pour corriger les déformations, soutenir les articulations et soulager la douleur. Chaque appareil est adapté à la morphologie du patient.</p>
+              <ul style="list-style: disc; padding-left: var(--space-4); color: var(--clr-text-secondary); margin-bottom: var(--space-4);">
+                <li style="margin-bottom: var(--space-2);">Corset scoliotique ( Milwaukee, Boston, Chêneau )</li>
+                <li style="margin-bottom: var(--space-2);">Orthèse de genou ( KO, KAFO )</li>
+                <li style="margin-bottom: var(--space-2);">Orthèse cheville-pied ( AFO, SMFO )</li>
+                <li style="margin-bottom: var(--space-2);">Corset pour cyphose et lordose</li>
+              </ul>
+              <a href="rendez-vous.html?service=ortheses" class="btn btn-primary btn-pill">Prendre RDV pour ce service</a>
+            </div>
+            <div style="border-radius: var(--radius-xl); overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?w=600&h=450&fit=crop" alt="Orthèse et corset" style="width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Services Grid -->
+        <h3 style="text-align: center; font-size: var(--fs-h3); margin-bottom: var(--space-6);">Autres services spécialisés</h3>
+        <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);">
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="heart-pulse"></i></div>
+            <h3>Kinésithérapie</h3>
+            <p>Rééducation post-amputation, mobilité fonctionnelle, renforcement musculaire et récupération après chirurgie orthopédique.</p>
+            <a href="rendez-vous.html?service=kinesitherapie" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="baby"></i></div>
+            <h3>Appareillage pédiatrique</h3>
+            <p>Prothèses et orthèses spécialement conçues pour les enfants, avec suivi de croissance et adaptations régulières.</p>
+            <a href="rendez-vous.html?service=pediatrie" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="footprints"></i></div>
+            <h3>Chaussures orthopédiques</h3>
+            <p>Semelles orthopédiques sur mesure et chaussures thérapeutiques pour le confort quotidien et la correction.</p>
+            <a href="rendez-vous.html?service=chaussures" class="service-link">En savoir plus <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Besoin d'un devis ou d'une consultation ?</h2>
+          <p>Contactez-nous pour discuter de vos besoins spécifiques. La première consultation est gratuite.</p>
+          <a href="rendez-vous.html" class="btn btn-outline-white btn-pill btn-lg">
+            <i data-lucide="calendar-check"></i> Prendre Rendez-vous
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same as index) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+          <p>Permettre aux patients de retrouver leur fonction de mobilité.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+            <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Liens rapides</h4>
+          <div class="footer-links">
+            <a href="../index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="equipe.html">Notre Équipe</a>
+            <a href="blog.html">Blog</a>
+            <a href="galerie.html">Galerie</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Patients</h4>
+          <div class="footer-links">
+            <a href="rendez-vous.html">Prendre RDV</a>
+            <a href="inscription-patient.html">Inscription</a>
+            <a href="suivi-patient.html">Suivi patient</a>
+            <a href="don.html">Faire un don</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-column footer-contact">
+          <h4>Contact</h4>
+          <p><i data-lucide="map-pin" style="width: 14px; height: 14px; display: inline;"></i> 22 Rue de la Paix, Delmas 75, Haïti</p>
+          <p><i data-lucide="phone" style="width: 14px; height: 14px; display: inline;"></i> +509 3644-1617</p>
+          <p><i data-lucide="mail" style="width: 14px; height: 14px; display: inline;"></i> haitirehabilitationcare@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Haiti Reh-Care 2025 | Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script>
+    lucide.createIcons();
+    gsap.registerPlugin(ScrollTrigger);
+  </script>
+</body>
+</html>

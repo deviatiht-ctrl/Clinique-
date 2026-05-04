@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Blog | Haiti Reh-Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="../../index.html"><img src="../../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Tableau de bord</a>
+      <a href="rendez-vous.html" class="sidebar-link"><i data-lucide="calendar"></i> Rendez-vous</a>
+      <a href="patients.html" class="sidebar-link"><i data-lucide="users"></i> Patients</a>
+      <a href="blog.html" class="sidebar-link active"><i data-lucide="file-text"></i> Blog</a>
+      <a href="galerie.html" class="sidebar-link"><i data-lucide="image"></i> Galerie</a>
+      <a href="equipe.html" class="sidebar-link"><i data-lucide="user-cog"></i> Équipe</a>
+      <a href="parametres.html" class="sidebar-link"><i data-lucide="settings"></i> Paramètres</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" onclick="logout()" class="sidebar-link"><i data-lucide="log-out"></i> Déconnexion</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 class="admin-title">Gestion du Blog</h1>
+      <div class="admin-actions">
+        <a href="../blog.html" target="_blank" class="btn btn-outline btn-pill" style="margin-right: var(--space-2);">Voir le blog</a>
+        <button class="btn btn-primary btn-pill" onclick="createPost()">
+          <i data-lucide="plus"></i> Nouvel article
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="info-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Catégorie</th>
+              <th>Date</th>
+              <th>Statut</th>
+              <th>Vues</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="blogTableBody">
+            <tr>
+              <td style="font-weight: var(--fw-medium);">Différents types de pathologies fréquentes du genou</td>
+              <td>Pathologies</td>
+              <td>15/03/2024</td>
+              <td><span class="pill pill-green">Publié</span></td>
+              <td>245</td>
+              <td>
+                <button class="action-btn"><i data-lucide="eye"></i></button>
+                <button class="action-btn edit"><i data-lucide="edit"></i></button>
+                <button class="action-btn delete"><i data-lucide="trash-2"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight: var(--fw-medium);">Prise en charge scoliose/cyphose/lordose</td>
+              <td>Orthèses</td>
+              <td>10/03/2024</td>
+              <td><span class="pill pill-green">Publié</span></td>
+              <td>189</td>
+              <td>
+                <button class="action-btn"><i data-lucide="eye"></i></button>
+                <button class="action-btn edit"><i data-lucide="edit"></i></button>
+                <button class="action-btn delete"><i data-lucide="trash-2"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight: var(--fw-medium);">Article en cours de rédaction</td>
+              <td>Rééducation</td>
+              <td>-</td>
+              <td><span class="pill pill-yellow">Brouillon</span></td>
+              <td>0</td>
+              <td>
+                <button class="action-btn"><i data-lucide="eye"></i></button>
+                <button class="action-btn edit"><i data-lucide="edit"></i></button>
+                <button class="action-btn delete"><i data-lucide="trash-2"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/api.js"></script>
+  <script src="../../assets/js/auth.js"></script>
+  <script>
+    lucide.createIcons();
+    checkAdminAuth();
+    
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+    
+    function createPost() {
+      alert('Formulaire de création d\'article à implémenter');
+    }
+  </script>
+</body>
+</html>

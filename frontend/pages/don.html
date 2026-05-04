@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faire un Don | Haiti Reh-Care</title>
+  <meta name="description" content="Aidez un patient à retrouver sa mobilité. Faites un don à Haiti Reh-Care.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/forms.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      <div class="navbar-nav">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="equipe.html" class="nav-link">Notre Équipe</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="galerie.html" class="nav-link">Galerie</a>
+        <a href="don.html" class="nav-link active">Don</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="login.html" class="nav-admin" id="adminLink">Admin</a>
+        <a href="rendez-vous.html" class="btn btn-primary btn-pill"><i data-lucide="calendar-check"></i> Prendre RDV</a>
+        <a href="login.html" class="btn btn-outline btn-sm" id="loginBtn"><i data-lucide="user"></i></a>
+        <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="navbar-logo"><img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+      <button class="mobile-toggle" id="mobileClose"><i data-lucide="x"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="equipe.html" class="nav-link">Notre Équipe</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="don.html" class="nav-link active">Don</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="mobile-actions"><a href="rendez-vous.html" class="btn btn-primary btn-pill">Prendre RDV</a></div>
+  </div>
+
+  <main class="page-content">
+    <section style="padding: var(--space-12) 0; background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-accent) 100%); color: white;">
+      <div class="container" style="text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background: rgba(255,255,255,0.2); border-radius: var(--radius-md); margin-bottom: var(--space-4);">
+          <i data-lucide="heart-handshake" style="width: 18px; height: 18px;"></i>
+          <span style="font-weight: var(--fw-medium);">Soutenez notre mission</span>
+        </div>
+        <h1 style="font-size: var(--fs-h2); font-family: var(--font-display); margin-bottom: var(--space-3); color: white;">Aider un patient à retrouver sa mobilité</h1>
+        <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+          Votre don permet d'offrir des prothèses et orthèses gratuites aux patients les plus vulnérables en Haïti.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8);">
+          <!-- Impact Stats -->
+          <div>
+            <h2 style="margin-bottom: var(--space-4);">Votre impact</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-bottom: var(--space-6);">
+              <div class="info-card" style="text-align: center;">
+                <div style="font-size: 36px; font-weight: var(--fw-bold); color: var(--clr-primary);">150+</div>
+                <div style="font-size: var(--fs-small); color: var(--clr-text-secondary);">Appareils offerts</div>
+              </div>
+              <div class="info-card" style="text-align: center;">
+                <div style="font-size: 36px; font-weight: var(--fw-bold); color: var(--clr-primary);">200+</div>
+                <div style="font-size: var(--fs-small); color: var(--clr-text-secondary);">Vies changées</div>
+              </div>
+              <div class="info-card" style="text-align: center;">
+                <div style="font-size: 36px; font-weight: var(--fw-bold); color: var(--clr-primary);">100%</div>
+                <div style="font-size: var(--fs-small); color: var(--clr-text-secondary);">À la cause</div>
+              </div>
+            </div>
+
+            <h3 style="margin-bottom: var(--space-3);">À quoi servent vos dons ?</h3>
+            <div style="display: grid; gap: var(--space-3);">
+              <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
+                <div style="width: 48px; height: 48px; background-color: var(--clr-bg-blue); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="accessibility" style="color: var(--clr-primary);"></i>
+                </div>
+                <div>
+                  <h4 style="margin-bottom: 4px;">Prothèses gratuites</h4>
+                  <p style="font-size: var(--fs-small); color: var(--clr-text-secondary); margin: 0;">Pour les patients qui ne peuvent pas payer</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
+                <div style="width: 48px; height: 48px; background-color: var(--clr-bg-blue); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="home" style="color: var(--clr-primary);"></i>
+                </div>
+                <div>
+                  <h4 style="margin-bottom: 4px;">Visites à domicile</h4>
+                  <p style="font-size: var(--fs-small); color: var(--clr-text-secondary); margin: 0;">Pour les patients qui ne peuvent pas se déplacer</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
+                <div style="width: 48px; height: 48px; background-color: var(--clr-bg-blue); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="baby" style="color: var(--clr-primary);"></i>
+                </div>
+                <div>
+                  <h4 style="margin-bottom: 4px;">Appareillage pédiatrique</h4>
+                  <p style="font-size: var(--fs-small); color: var(--clr-text-secondary); margin: 0;">Prothèses adaptées pour les enfants en croissance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Donation Form -->
+          <div>
+            <div class="info-card" style="padding: var(--space-6);">
+              <h2 style="margin-bottom: var(--space-4);">Faire un don</h2>
+              
+              <div class="form-group">
+                <label class="form-label">Montant du don</label>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); margin-bottom: var(--space-3);">
+                  <button type="button" class="amount-btn" data-amount="25">$25</button>
+                  <button type="button" class="amount-btn active" data-amount="50">$50</button>
+                  <button type="button" class="amount-btn" data-amount="100">$100</button>
+                  <button type="button" class="amount-btn" data-amount="250">$250</button>
+                  <button type="button" class="amount-btn" data-amount="500">$500</button>
+                  <button type="button" class="amount-btn" data-amount="custom">Autre</button>
+                </div>
+                <input type="number" class="form-input" id="customAmount" placeholder="Montant personnalisé" style="display: none;">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Type de don</label>
+                <div class="radio-group horizontal">
+                  <label class="radio-label">
+                    <input type="radio" name="donation_type" value="one_time" checked> Une fois
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="donation_type" value="monthly"> Mensuel
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Vos informations</label>
+                <input type="text" class="form-input mb-2" placeholder="Nom complet">
+                <input type="email" class="form-input mb-2" placeholder="Email">
+                <input type="tel" class="form-input" placeholder="Téléphone (optionnel)">
+              </div>
+
+              <div class="consent-box">
+                <input type="checkbox" id="receipt" name="receipt">
+                <label for="receipt">Je souhaite recevoir un reçu fiscal pour déduction d'impôts.</label>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-pill btn-lg" style="width: 100%; margin-top: var(--space-4);" onclick="processDonation()">
+                <i data-lucide="heart"></i> Faire un don
+              </button>
+
+              <p style="text-align: center; margin-top: var(--space-3); font-size: var(--fs-small); color: var(--clr-text-muted);">
+                <i data-lucide="lock" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> 
+                Paiement sécurisé · Reçu fiscal disponible
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+          <p>Permettre aux patients de retrouver leur fonction de mobilité.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+            <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Liens rapides</h4>
+          <div class="footer-links">
+            <a href="../index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="equipe.html">Notre Équipe</a>
+            <a href="blog.html">Blog</a>
+            <a href="galerie.html">Galerie</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Patients</h4>
+          <div class="footer-links">
+            <a href="rendez-vous.html">Prendre RDV</a>
+            <a href="inscription-patient.html">Inscription</a>
+            <a href="suivi-patient.html">Suivi patient</a>
+            <a href="don.html">Faire un don</a>
+          </div>
+        </div>
+        <div class="footer-column footer-contact">
+          <h4>Contact</h4>
+          <p><i data-lucide="map-pin" style="width: 14px; height: 14px; display: inline;"></i> 22 Rue de la Paix, Delmas 75, Haïti</p>
+          <p><i data-lucide="phone" style="width: 14px; height: 14px; display: inline;"></i> +509 3644-1617</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Haiti Reh-Care 2025 | Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    // Amount buttons
+    const amountBtns = document.querySelectorAll('.amount-btn');
+    const customAmountInput = document.getElementById('customAmount');
+    let selectedAmount = 50;
+    
+    amountBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        amountBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const amount = btn.dataset.amount;
+        if (amount === 'custom') {
+          customAmountInput.style.display = 'block';
+          customAmountInput.focus();
+        } else {
+          customAmountInput.style.display = 'none';
+          selectedAmount = parseInt(amount);
+        }
+      });
+    });
+    
+    function processDonation() {
+      const customActive = document.querySelector('.amount-btn[data-amount="custom"]').classList.contains('active');
+      if (customActive && customAmountInput.value) {
+        selectedAmount = parseInt(customAmountInput.value);
+      }
+      
+      alert(`Merci pour votre don de $${selectedAmount} ! Vous serez redirigé vers la page de paiement.\n\n(Note: Intégration avec processeur de paiement à configurer)`);
+    }
+  </script>
+</body>
+</html>

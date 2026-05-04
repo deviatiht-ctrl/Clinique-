@@ -1,0 +1,285 @@
+/* Calendar Styles - Haiti Reh-Care */
+
+/* Calendar Container */
+.calendar-container {
+  background-color: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+/* Calendar Header */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.calendar-title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text);
+}
+
+.calendar-nav {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.calendar-nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--clr-text);
+  transition: all var(--transition-fast);
+}
+
+.calendar-nav button:hover {
+  background-color: var(--clr-bg-soft);
+  color: var(--clr-primary);
+}
+
+.calendar-nav button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.calendar-nav button i {
+  width: 18px;
+  height: 18px;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  padding: var(--space-2);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.calendar-day:not(.disabled):hover {
+  background-color: var(--clr-bg-soft);
+  transform: scale(1.05);
+}
+
+.calendar-day.disabled {
+  color: var(--clr-text-muted);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.calendar-day.today {
+  color: var(--clr-primary);
+  font-weight: var(--fw-bold);
+}
+
+.calendar-day.selected {
+  background-color: var(--clr-primary);
+  color: white;
+}
+
+.calendar-day.has-slots::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--clr-success);
+  border-radius: 50%;
+}
+
+.calendar-day.selected.has-slots::after {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Time Slots */
+.time-slots-container {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--clr-border);
+}
+
+.time-slots-title {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text);
+  margin-bottom: var(--space-3);
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.time-slot {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--clr-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.time-slot:hover:not(.disabled) {
+  border-color: var(--clr-primary);
+  background-color: var(--clr-bg-blue);
+}
+
+.time-slot.selected {
+  background-color: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: white;
+}
+
+.time-slot.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.time-slot.disabled:hover {
+  border-color: var(--clr-border);
+  background-color: transparent;
+}
+
+/* Mini Calendar (Admin) */
+.mini-calendar {
+  background-color: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+}
+
+.mini-calendar .calendar-day {
+  font-size: var(--fs-small);
+}
+
+.mini-calendar .calendar-weekday {
+  font-size: var(--fs-xs);
+  padding: var(--space-1);
+}
+
+/* Appointment List (Admin) */
+.appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.appointment-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.appointment-item:hover {
+  border-color: var(--clr-primary);
+  background-color: var(--clr-bg-blue);
+}
+
+.appointment-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--clr-bg-soft);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+}
+
+.appointment-info {
+  flex: 1;
+}
+
+.appointment-info h5 {
+  font-size: var(--fs-body);
+  margin-bottom: 2px;
+}
+
+.appointment-info span {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+}
+
+.appointment-status {
+  flex-shrink: 0;
+}
+
+/* Legend */
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--clr-border);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-small);
+  color: var(--clr-text-secondary);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot.available {
+  background-color: var(--clr-bg-soft);
+  border: 1px solid var(--clr-border);
+}
+
+.legend-dot.selected {
+  background-color: var(--clr-primary);
+}
+
+.legend-dot.booked {
+  background-color: var(--clr-text-muted);
+}
+
+.legend-dot.has-slots {
+  background-color: var(--clr-success);
+}

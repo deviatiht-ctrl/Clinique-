@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Paramètres | Haiti Reh-Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <link rel="stylesheet" href="../../assets/css/forms.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="../../index.html"><img src="../../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Tableau de bord</a>
+      <a href="rendez-vous.html" class="sidebar-link"><i data-lucide="calendar"></i> Rendez-vous</a>
+      <a href="patients.html" class="sidebar-link"><i data-lucide="users"></i> Patients</a>
+      <a href="blog.html" class="sidebar-link"><i data-lucide="file-text"></i> Blog</a>
+      <a href="galerie.html" class="sidebar-link"><i data-lucide="image"></i> Galerie</a>
+      <a href="equipe.html" class="sidebar-link"><i data-lucide="user-cog"></i> Équipe</a>
+      <a href="parametres.html" class="sidebar-link active"><i data-lucide="settings"></i> Paramètres</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" onclick="logout()" class="sidebar-link"><i data-lucide="log-out"></i> Déconnexion</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 class="admin-title">Paramètres du site</h1>
+    </header>
+
+    <div class="admin-content">
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
+        <!-- Site Info -->
+        <div class="info-card">
+          <h3 style="margin-bottom: var(--space-4);"><i data-lucide="globe"></i> Informations générales</h3>
+          <form>
+            <div class="form-group">
+              <label class="form-label">Nom du site</label>
+              <input type="text" class="form-input" value="Haiti Reh-Care">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Slogan</label>
+              <input type="text" class="form-input" value="Confortabilité - Esthéticité - Fonctionalité">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Description</label>
+              <textarea class="form-textarea" rows="3">Centre de réhabilitation et d'appareillage orthopédique en Haïti.</textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Logo</label>
+              <input type="file" class="form-input">
+            </div>
+            <button type="button" class="btn btn-primary">Sauvegarder</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="info-card">
+          <h3 style="margin-bottom: var(--space-4);"><i data-lucide="contact"></i> Coordonnées</h3>
+          <form>
+            <div class="form-group">
+              <label class="form-label">Adresse</label>
+              <input type="text" class="form-input" value="22 Rue de la Paix, Delmas 75, Haïti">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Téléphone</label>
+              <input type="tel" class="form-input" value="+509 3644-1617">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" value="haitirehabilitationcare@gmail.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">WhatsApp</label>
+              <input type="tel" class="form-input" value="+509 3644-1617">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Horaires</label>
+              <input type="text" class="form-input" value="Lundi - Vendredi: 8h00 - 15h00">
+            </div>
+            <button type="button" class="btn btn-primary">Sauvegarder</button>
+          </form>
+        </div>
+
+        <!-- Social Media -->
+        <div class="info-card">
+          <h3 style="margin-bottom: var(--space-4);"><i data-lucide="share-2"></i> Réseaux sociaux</h3>
+          <form>
+            <div class="form-group">
+              <label class="form-label">Facebook</label>
+              <input type="url" class="form-input" placeholder="https://facebook.com/...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Instagram</label>
+              <input type="url" class="form-input" placeholder="https://instagram.com/...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">YouTube</label>
+              <input type="url" class="form-input" placeholder="https://youtube.com/...">
+            </div>
+            <button type="button" class="btn btn-primary">Sauvegarder</button>
+          </form>
+        </div>
+
+        <!-- Appointment Settings -->
+        <div class="info-card">
+          <h3 style="margin-bottom: var(--space-4);"><i data-lucide="calendar-clock"></i> Paramètres RDV</h3>
+          <form>
+            <div class="form-group">
+              <label class="form-label">Durée d'un RDV (minutes)</label>
+              <input type="number" class="form-input" value="30">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Heure de début</label>
+              <input type="time" class="form-input" value="08:00">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Heure de fin</label>
+              <input type="time" class="form-input" value="15:00">
+            </div>
+            <div class="consent-box">
+              <input type="checkbox" id="weekend" checked>
+              <label for="weekend">Ouvrir le samedi</label>
+            </div>
+            <button type="button" class="btn btn-primary">Sauvegarder</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/api.js"></script>
+  <script src="../../assets/js/auth.js"></script>
+  <script>
+    lucide.createIcons();
+    checkAdminAuth();
+    
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie | Haiti Reh-Care</title>
+  <meta name="description" content="Galerie photos de Haiti Reh-Care - Centre de réhabilitation à Delmas 75, Haïti.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/sections.css">
+  <link rel="stylesheet" href="../assets/css/cards.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care Logo">
+        <span class="navbar-logo-text">Haiti Reh-Care <span>Centre de Réhabilitation</span></span>
+      </a>
+      
+      <div class="navbar-nav">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="equipe.html" class="nav-link">Notre Équipe</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="galerie.html" class="nav-link active">Galerie</a>
+        <a href="don.html" class="nav-link">Don</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <a href="login.html" class="nav-admin" id="adminLink">Admin</a>
+        <a href="rendez-vous.html" class="btn btn-primary btn-pill">
+          <i data-lucide="calendar-check"></i> Prendre RDV
+        </a>
+        <a href="login.html" class="btn btn-outline btn-sm" id="loginBtn">
+          <i data-lucide="user"></i>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+      </a>
+      <button class="mobile-toggle" id="mobileClose">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="equipe.html" class="nav-link">Notre Équipe</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="galerie.html" class="nav-link active">Galerie</a>
+      <a href="don.html" class="nav-link">Don</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="mobile-actions">
+      <a href="rendez-vous.html" class="btn btn-primary btn-pill">Prendre RDV</a>
+    </div>
+  </div>
+
+  <main class="page-content">
+    <!-- Page Header -->
+    <section style="padding: var(--space-12) 0 var(--space-6); background-color: var(--clr-bg-blue);">
+      <div class="container">
+        <div class="eyebrow">
+          <i data-lucide="image" style="width: 14px; height: 14px;"></i>
+          Notre travail
+        </div>
+        <h1 style="font-size: var(--fs-h2); font-family: var(--font-display); margin-bottom: var(--space-3);">Galerie</h1>
+        <p style="font-size: 18px; color: var(--clr-text-secondary); max-width: 600px;">
+          Découvrez nos locaux, notre équipe au travail et les patients qui ont retrouvé leur mobilité.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section">
+      <div class="container">
+        <!-- Category Filter -->
+        <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-6); flex-wrap: wrap;">
+          <button class="btn btn-primary btn-sm pill-btn active" data-category="all">Tous</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="clinic">Notre Clinique</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="team">Notre Équipe</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="patients">Nos Patients</button>
+          <button class="btn btn-outline btn-sm pill-btn" data-category="workshop">Atelier</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);" id="galleryGrid">
+          <div class="gallery-item" data-category="clinic">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=400&h=300&fit=crop" alt="Clinique" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Notre centre de réhabilitation</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="team">
+            <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=400&h=300&fit=crop" alt="Équipe" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Notre équipe d'orthoprothésistes</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="workshop">
+            <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&h=300&fit=crop" alt="Atelier" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Fabrication de prothèses</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="patients">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=300&fit=crop" alt="Patient" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Patient avec prothèse</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="clinic">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=400&h=300&fit=crop" alt="Salle de rééducation" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Salle de kinésithérapie</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="workshop">
+            <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&h=300&fit=crop" alt="Matériel" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Équipement moderne</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="team">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop" alt="Formation" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Formation continue</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="patients">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop" alt="Rééducation" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Séance de rééducation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center;">
+      <button id="lightboxClose" style="position: absolute; top: var(--space-4); right: var(--space-4); background: white; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+        <i data-lucide="x"></i>
+      </button>
+      <img id="lightboxImg" src="" alt="" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+      <div id="lightboxCaption" style="position: absolute; bottom: var(--space-4); left: 50%; transform: translateX(-50%); color: white; text-align: center; background: rgba(0,0,0,0.5); padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care">
+          <p>Permettre aux patients de retrouver leur fonction de mobilité.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+            <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Liens rapides</h4>
+          <div class="footer-links">
+            <a href="../index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="equipe.html">Notre Équipe</a>
+            <a href="blog.html">Blog</a>
+            <a href="galerie.html">Galerie</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Patients</h4>
+          <div class="footer-links">
+            <a href="rendez-vous.html">Prendre RDV</a>
+            <a href="inscription-patient.html">Inscription</a>
+            <a href="suivi-patient.html">Suivi patient</a>
+            <a href="don.html">Faire un don</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-column footer-contact">
+          <h4>Contact</h4>
+          <p><i data-lucide="map-pin" style="width: 14px; height: 14px; display: inline;"></i> 22 Rue de la Paix, Delmas 75, Haïti</p>
+          <p><i data-lucide="phone" style="width: 14px; height: 14px; display: inline;"></i> +509 3644-1617</p>
+          <p><i data-lucide="mail" style="width: 14px; height: 14px; display: inline;"></i> haitirehabilitationcare@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Haiti Reh-Care 2025 | Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    // Gallery filter
+    const filterBtns = document.querySelectorAll('.pill-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('btn-primary', 'active');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
+        btn.classList.add('btn-primary', 'active');
+        
+        const category = btn.dataset.category;
+        
+        galleryItems.forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+    
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        const caption = item.querySelector('.gallery-caption');
+        lightboxImg.src = img.src;
+        lightboxCaption.textContent = caption ? caption.textContent : '';
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+    
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Patients | Haiti Reh-Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="../../index.html"><img src="../../assets/img/logorecar.png?v=1" alt="Haiti Reh-Care"></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Tableau de bord</a>
+      <a href="rendez-vous.html" class="sidebar-link"><i data-lucide="calendar"></i> Rendez-vous</a>
+      <a href="patients.html" class="sidebar-link active"><i data-lucide="users"></i> Patients</a>
+      <a href="blog.html" class="sidebar-link"><i data-lucide="file-text"></i> Blog</a>
+      <a href="galerie.html" class="sidebar-link"><i data-lucide="image"></i> Galerie</a>
+      <a href="equipe.html" class="sidebar-link"><i data-lucide="user-cog"></i> Équipe</a>
+      <a href="parametres.html" class="sidebar-link"><i data-lucide="settings"></i> Paramètres</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" onclick="logout()" class="sidebar-link"><i data-lucide="log-out"></i> Déconnexion</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 class="admin-title">Gestion des Patients</h1>
+      <div class="admin-actions">
+        <button class="btn btn-primary btn-pill" onclick="openSidePanel('newPatient')">
+          <i data-lucide="plus"></i> Nouveau patient
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Search & Filter -->
+      <div class="info-card" style="margin-bottom: var(--space-4);">
+        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <div style="position: relative; flex: 1; min-width: 250px;">
+            <i data-lucide="search" style="position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%); color: var(--clr-text-muted);"></i>
+            <input type="text" class="form-input" id="searchPatients" placeholder="Rechercher un patient..." style="padding-left: 40px;">
+          </div>
+          <select class="form-select" style="width: auto;">
+            <option value="">Tous les statuts</option>
+            <option value="active">Actif</option>
+            <option value="archived">Archivé</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Patients Table -->
+      <div class="info-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Nom complet</th>
+              <th>Pathologie principale</th>
+              <th>Téléphone</th>
+              <th>Inscription</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="patientsTableBody">
+            <tr>
+              <td>P20240101001</td>
+              <td>Jean Baptiste</td>
+              <td>Amputation tibiale</td>
+              <td>+509 3644-0001</td>
+              <td>15/01/2024</td>
+              <td><span class="pill pill-green">Actif</span></td>
+              <td>
+                <button class="action-btn"><i data-lucide="eye"></i></button>
+                <button class="action-btn edit"><i data-lucide="edit"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>P20240102002</td>
+              <td>Marie Joseph</td>
+              <td>Scoliose</td>
+              <td>+509 3644-0002</td>
+              <td>20/01/2024</td>
+              <td><span class="pill pill-green">Actif</span></td>
+              <td>
+                <button class="action-btn"><i data-lucide="eye"></i></button>
+                <button class="action-btn edit"><i data-lucide="edit"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--clr-border);">
+          <span style="font-size: var(--fs-small); color: var(--clr-text-muted);">Affichage de 1 à 2 sur 156 patients</span>
+          <div style="display: flex; gap: var(--space-2);">
+            <button class="btn btn-outline btn-sm" disabled>Précédent</button>
+            <button class="btn btn-outline btn-sm">Suivant</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/api.js"></script>
+  <script src="../../assets/js/auth.js"></script>
+  <script src="../../assets/js/admin/patients.js"></script>
+  <script>
+    lucide.createIcons();
+    checkAdminAuth();
+    
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+    
+    function openSidePanel(type) {
+      alert('Panneau latéral ' + type + ' à implémenter');
+    }
+  </script>
+</body>
+</html>
