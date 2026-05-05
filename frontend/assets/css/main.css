@@ -88,9 +88,7 @@ p {
 /* Utility Classes */
 .container {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 var(--space-4);
+  padding: 0 5%;
 }
 
 .container-narrow {
@@ -150,7 +148,6 @@ p {
 
 .section-header p {
   font-size: var(--fs-body);
-  max-width: 600px;
 }
 
 /* Buttons */
